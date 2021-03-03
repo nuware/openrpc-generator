@@ -54,8 +54,8 @@ const componentHooks: IComponentHooks = {
 };
 
 const getComponentTemplatePath = (component: TComponentConfig) => {
-  const d = component.templateDirectory || `/templates/${component.type}/${component.language}/`;
-  return path.join(__dirname, "../", d);
+  const d = `/templates/${component.type}/${component.language}/`;
+  return component.templateDirectory || path.join(__dirname, "../", d);
 };
 
 const copyStaticForComponent = async (
