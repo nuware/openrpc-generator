@@ -13,8 +13,6 @@
 
 A Generator tool for [open-rpc](https://github.com/open-rpc/spec) APIs.
 
-Need help or have a question? Join us on [Discord](https://discord.gg/gREUKuF)!
-
 ## Features:
 
 - Built in components for:
@@ -33,8 +31,12 @@ Using the CLI's `init` command, you can walk though an interactive config builde
 ### Quick start
 
 ```sh
-npm install -g @open-rpc/generator
+git clone https://github.com/nuware/openrpc-generator.git
+cd openrpc-generator
+npm link
+```
 
+```sh
 open-rpc-generator init
 open-rpc-generator generate -c open-rpc-generator-config.json
 ```
