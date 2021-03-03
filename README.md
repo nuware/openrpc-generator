@@ -33,7 +33,7 @@ Using the CLI's `init` command, you can walk though an interactive config builde
 ```sh
 git clone https://github.com/nuware/openrpc-generator.git
 cd openrpc-generator
-npm link
+npm install && npm run build && npm link
 ```
 
 ```sh
