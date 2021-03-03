@@ -186,11 +186,15 @@ const hooks: IHooks = {
         const packagePath = path.join(dest, "package.json");
         const fileContents = await readFile(packagePath);
         const pkg = JSON.parse(fileContents.toString());
-        const updatedPkg = JSON.stringify({
-          ...pkg,
-          name: component.name,
-          version: openrpcDocument.info.version,
-        });
+        const updatedPkg = JSON.stringify(
+          {
+            ...pkg,
+            name: component.name,
+            version: openrpcDocument.info.version,
+          },
+          undefined,
+          "  "
+        );
 
         return await writeFile(packagePath, updatedPkg);
       }
