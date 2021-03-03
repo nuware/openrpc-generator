@@ -54,7 +54,7 @@ const componentHooks: IComponentHooks = {
 };
 
 const getComponentTemplatePath = (component: TComponentConfig) => {
-  const d = `/templates/${component.type}/${component.language}/`;
+  const d = component.templateDirectory || `/templates/${component.type}/${component.language}/`;
   return path.join(__dirname, "../", d);
 };
 
@@ -106,18 +106,21 @@ interface IClientConfig {
   type: "client";
   name: string;
   language: "typescript" | "rust";
+  templateDirectory?: string;
 }
 
 interface IServerConfig {
   type: "server";
   name: string;
   language: "typescript";
+  templateDirectory?: string;
 }
 
 interface IDocsConfig {
   type: "docs";
   name: string;
   language: "gatsby";
+  templateDirectory?: string;
 }
 
 type TComponentConfig = IClientConfig | IServerConfig | IDocsConfig;
